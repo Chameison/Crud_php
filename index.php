@@ -7,8 +7,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-light ">
+    <div class="container-fluid" >
         <a class="navbar-brand" href="#">Cadastro </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,12 +36,18 @@
         <?php 
 
             include("config.php"); //incluindo as configurações 
-            switch($_REQUEST["page"]) {
+            switch(@$_REQUEST["page"]) {
                 case 'new':
-                    include('new_user.php');
+                  include('new_user.php');
                 break;
                 case 'list':
-                    include('list_user.php');
+                  include('list_user.php');
+                break;
+                case "save":
+                  include("save_user.php");
+                break;
+                case "edit":
+                  include("edit_user.php");  
                 break;
                 default:
                     print '<h1>Bem vindo!</h1>';
